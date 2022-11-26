@@ -20,15 +20,36 @@ generateBtn.addEventListener("click", writePassword);
 
 //Presented with prompts for how many characters in password
 function generatePassword() {
-  var amountCharacters = window.parseInt("Please select number of characters (must be between 8 and 128 characters)");
-  console.log(typeof amountCharacters)
-  console.log(amountCharacters)
+  var amountCharacters = window.parseInt(prompt["Please select number of characters (must be between 8 and 128 characters)"]);
+ // console.log(typeof amountCharacters)
+ // console.log(amountCharacters)
+
+  if (!amountCharacters) {
+    alert("This needs a value");
+  } 
+  else if (amountCharacters < 8 || amountCharacters > 128) {
+    amountChars = parseInt(prompt["Please input a number between 8 and 128"]);
+  }
+  else {
+    numbers = confirm("Will this contain numbers?");
+    specials = confirm("Will this contain special characters?");
+    lowercase = confirm("Will this contain lowercase letters?");
+    uppercase = confirm("Will this contain uppercase letters?");
+  }
+//Negative input
+  if (!numbers && !specials && !lowercase && !uppercase){
+    alert("Please choose password criteria");
+}  
+//Positive input
+  else if (numbers && specials && lowercase && uppercase) {
+    choices = (numbers + specials + lowercase + uppercase);
+  }
 
 
-  // function lengthRange(inputtxt, minlength, maxlength)
+  //function lengthRange(inputText, minlength, maxlength)
   // {  	
-  //    var userCharacterInput = inputtxt.value;  
-  //    if(userCharacterInput.length >= 8 && userInput.length <= 128)
+  //    var userCharacterInput = inputText.value;  
+  //    if(userCharacterInput.length >= 8 && userCharacterInput.length <= 128)
   //       {  	
   //         return true;  	
   //       }
@@ -40,7 +61,7 @@ function generatePassword() {
   // }
 }
 generatePassword()
-//lengthRange()
+
 
 
 

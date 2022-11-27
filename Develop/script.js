@@ -20,47 +20,47 @@ generateBtn.addEventListener("click", writePassword);
 
 //Presented with prompts for how many characters in password
 function generatePassword() {
-  var amountCharacters = window.parseInt(prompt["Please select number of characters (must be between 8 and 128 characters)"]);
- // console.log(typeof amountCharacters)
- // console.log(amountCharacters)
+  var amountCharacters = parseInt(prompt("Please select number of characters (must be between 8 and 128 characters)"));
+  var randomPassword =  []
+  // console.log(typeof amountCharacters)
+ console.log(amountCharacters)
 
   if (!amountCharacters) {
     alert("This needs a value");
   } 
   else if (amountCharacters < 8 || amountCharacters > 128) {
-    amountChars = parseInt(prompt["Please input a number between 8 and 128"]);
+    amountChars = parseInt(prompt("Please input a number between 8 and 128"));
   }
-  else {
-    numbers = confirm("Will this contain numbers?");
-    specials = confirm("Will this contain special characters?");
-    lowercase = confirm("Will this contain lowercase letters?");
-    uppercase = confirm("Will this contain uppercase letters?");
-  }
+  
+  var hasNumbers = confirm("Will this contain numbers?");
+  var hasSpecials = confirm("Will this contain special characters?");
+  var hasLowercase = confirm("Will this contain lowercase letters?");
+  var hasUppercase = confirm("Will this contain uppercase letters?");
+  
 //Negative input
-  if (!numbers && !specials && !lowercase && !uppercase){
+  if (!hasNumbers && !hasSpecials && !hasLowercase && !hasUppercase){
     alert("Please choose password criteria");
 }  
-//Positive input
-  else if (numbers && specials && lowercase && uppercase) {
-    choices = (numbers + specials + lowercase + uppercase);
-  }
+console.log(hasNumbers, hasSpecials, hasLowercase, hasUppercase)
+// //Positive input - randomizer
+//   if (hasNumbers && hasSpecials && hasLowercase && hasUppercase) {
+//     var index = Math.floor(Math.random() * amountCharacters.length);
+//     var choices = amountCharacters[index];
+  
+//   }
+//   console.log(choices) 
 
-
-  //function lengthRange(inputText, minlength, maxlength)
-  // {  	
-  //    var userCharacterInput = inputText.value;  
-  //    if(userCharacterInput.length >= 8 && userCharacterInput.length <= 128)
-  //       {  	
-  //         return true;  	
-  //       }
-  //    else
-  //       {  	
-  //   alert("Please input between " + 8 + " and " + 128 + " characters");  		
-  //         return false;  	
-  //       }  
-  // }
+if (hasNumbers) {
+  var yesNumbers = Math.floor(Math.random() * numbers.length);
+  var numberChoice = numbers[yesNumbers];
+  console.log(numberChoice)
+  randomPassword.push(numberChoice);
 }
-generatePassword()
+
+ 
+  return randomPassword;
+}
+
 
 
 

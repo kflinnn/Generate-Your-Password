@@ -23,9 +23,7 @@ function generatePassword() {
   var choices = []; 
   var results = [];
   var amountCharacters = parseInt(prompt("Please select number of characters (must be between 8 and 128 characters)"));
-    // console.log(typeof amountCharacters)
- console.log(amountCharacters)
-
+  
   if (!amountCharacters) {
     alert("This needs a value");
   } 
@@ -45,8 +43,7 @@ function generatePassword() {
   if (!hasNumbers && !hasSpecials && !hasLowercase && !hasUppercase){
     alert("Please choose password criteria");
 }  
-console.log(hasNumbers, hasSpecials, hasLowercase, hasUppercase)
-
+//Positive user input
 if (hasNumbers){
   choices = choices.concat(numbers)
 }
@@ -62,52 +59,11 @@ if (hasLowercase){
 if (hasUppercase){
   choices = choices.concat(uppercase)
 }
-console.log(choices)
+
 for (let i = 0; i < amountCharacters; i++) {
   results.push(choices[Math.floor(Math.random() * choices.length)]); 
 }
-  
-
-//User answers prompts input is validated and at least one character type is selected
-// var length = amountCharacters;
-
-//   if (hasNumbers && hasSpecials && hasLowercase && hasUppercase) {
-//     var index = Math.floor(Math.random() * amountCharacters.length);
-//     var choices = amountCharacters[index];
-  
-// //   }
-// //   console.log(choices) 
-
-// if (hasNumbers) {
-//   var yesNumbers = numbers[Math.floor(Math.random() * numbers.length)];
-//   console.log("yesNumbers", yesNumbers)
-//   var numberChoice = numbers[yesNumbers];
-//   console.log(numberChoice)
-//   randomPassword.push(numberChoice);
-// }
-
-// if (hasSpecials) {
-//   var yesSpecials = Math.floor(Math.random() * specials.length);
-//   var specialChoice = specials[yesSpecials];
-//   console.log(specialChoice)
-//   randomPassword.push(specialChoice);
-// }
- 
-// if (hasNumbers) {
-//   var yesLowercase = Math.floor(Math.random() * lowercase.length);
-//   var lowercaseChoice = lowercase[yesLowercase];
-//   console.log(lowercaseChoice)
-//   randomPassword.push(lowercaseChoice);
-// }
-
-// if (hasUppercase) {
-//   var yesUppercase = Math.floor(Math.random() * uppercase.length);
-//   var uppercaseChoice = uppercase[yesUppercase];
-//   console.log(uppercaseChoice)
-//   randomPassword.push(uppercaseChoice);
-// }
-// // //Password generates once all criteria is selected and is displayed in an alert or written to the page
+// // //Password generates once all criteria is selected and is displayed written to the page
   return results.join("");
-//  }
 }
 

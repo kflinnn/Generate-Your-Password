@@ -18,20 +18,23 @@
 // // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//Presented with prompts for how many characters in password
+//Presented with prompts for how many characters in password and user selects
 function generatePassword() {
   var amountCharacters = parseInt(prompt("Please select number of characters (must be between 8 and 128 characters)"));
-  var randomPassword =  []
+  var randomPassword =  [];
   // console.log(typeof amountCharacters)
  console.log(amountCharacters)
 
   if (!amountCharacters) {
     alert("This needs a value");
   } 
+
+  //User chooses length of at least 8 characters but no more than 128
   else if (amountCharacters < 8 || amountCharacters > 128) {
     amountChars = parseInt(prompt("Please input a number between 8 and 128"));
   }
   
+  //User selects which criteria to include in the password
   var hasNumbers = confirm("Will this contain numbers?");
   var hasSpecials = confirm("Will this contain special characters?");
   var hasLowercase = confirm("Will this contain lowercase letters?");
@@ -42,13 +45,16 @@ function generatePassword() {
     alert("Please choose password criteria");
 }  
 console.log(hasNumbers, hasSpecials, hasLowercase, hasUppercase)
-// //Positive input - randomizer
-//   if (hasNumbers && hasSpecials && hasLowercase && hasUppercase) {
-//     var index = Math.floor(Math.random() * amountCharacters.length);
-//     var choices = amountCharacters[index];
+
+//User answers prompts input is validated and at least one character type is selected
+var length = amountCharacters;
+
+  if (hasNumbers && hasSpecials && hasLowercase && hasUppercase) {
+    var index = Math.floor(Math.random() * amountCharacters.length);
+    var choices = amountCharacters[index];
   
-//   }
-//   console.log(choices) 
+  }
+  console.log(choices) 
 
 if (hasNumbers) {
   var yesNumbers = Math.floor(Math.random() * numbers.length);
@@ -57,24 +63,26 @@ if (hasNumbers) {
   randomPassword.push(numberChoice);
 }
 
+if (hasSpecials) {
+  var yesSpecials = Math.floor(Math.random() * specials.length);
+  var specialChoice = specials[yesSpecials];
+  console.log(specialChoice)
+  randomPassword.push(specialChoice);
+}
  
-  return randomPassword;
+if (hasNumbers) {
+  var yesLowercase = Math.floor(Math.random() * lowercase.length);
+  var lowercaseChoice = lowercase[yesLowercase];
+  console.log(lowercaseChoice)
+  randomPassword.push(lowercaseChoice);
 }
 
-
-
-
-
-
-//User selects with criteria to include in the password
-
-//User prompted for the length of the password
-
-//User chooses length of at least 8 characters but no more than 128
-
-//User is asked for character types to include and user confirms
-
-//User answers prompts input is validated and at least one character type is selected
-
+if (hasUppercase) {
+  var yesUppercase = Math.floor(Math.random() * uppercase.length);
+  var uppercaseChoice = uppercase[yesUppercase];
+  console.log(uppercaseChoice)
+  randomPassword.push(uppercaseChoice);
+}
 //Password generates once all criteria is selected and is displayed in an alert or written to the page
-
+  return randomPassword;
+}

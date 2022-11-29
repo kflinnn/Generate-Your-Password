@@ -21,7 +21,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   var choices = []; 
   var results = [];
-  var amountCharacters = prompt("Please select number of characters (must be between 8 and 128 characters");
+  var amountCharacters = prompt("Please select number of characters (must be between 8 and 128 characters)");
   
   if (!amountCharacters) {
     alert("This needs a value");

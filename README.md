@@ -61,3 +61,5 @@ Language: HTML
 
 Language: CSS
 
+Language: JavaScript
+

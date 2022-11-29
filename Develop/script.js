@@ -11,7 +11,6 @@
  function writePassword() {
    var password = generatePassword();
    var passwordText = document.querySelector("#password");
-
    passwordText.value = password;
  }
 
@@ -22,15 +21,16 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   var choices = []; 
   var results = [];
-  var amountCharacters = parseInt(prompt("Please select number of characters (must be between 8 and 128 characters)"));
+  var amountCharacters = prompt("Please select number of characters (must be between 8 and 128 characters");
   
   if (!amountCharacters) {
     alert("This needs a value");
+    return "Your Secure Password";
   } 
 
   //User chooses length of at least 8 characters but no more than 128
-  if (amountCharacters < 8 || amountCharacters > 128) {
-    return;
+  while (parseInt(amountCharacters) != amountCharacters || amountCharacters < 8 || amountCharacters > 128) {
+    amountCharacters = prompt("Please select number of characters (must be between 8 and 128 characters)");
   }
   
   //User selects which criteria to include in the password

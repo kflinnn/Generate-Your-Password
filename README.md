@@ -20,7 +20,7 @@ Validation that user selected at least one criteria:
 
 ![Screen Shot 2022-11-28 at 11 07 20 PM](https://user-images.githubusercontent.com/116764540/204436427-9e9e1721-a95b-47b9-87dd-934a0eb86500.png)
 
-Prompt Asking Character Amount: 
+Prompt asking character amount: 
 
 ![Screen Shot 2022-11-28 at 11 04 42 PM](https://user-images.githubusercontent.com/116764540/204436098-ecab67dc-1b2a-48af-ab2c-a959cdbad419.png)
 
